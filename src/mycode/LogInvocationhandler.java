@@ -14,9 +14,12 @@ public class LogInvocationhandler implements InvocationHandler {
         System.out.println("LogInvocationhandler invoke begin");
    
         System.out.println("method: "+ method.getName());
-        for(Object methodArg : args){ 
-            System.out.println("arg: "+ methodArg); 
-        }   
+        if (args != null) {
+            for(Object methodArg : args){ 
+                System.out.println("arg: "+ methodArg); 
+            }   
+        }
+     
         Object result = method.invoke(object, args);        
         System.out.println("LogInvocationhandler invoke end");
         return result;

@@ -10,5 +10,9 @@ public class DynamicProxyTest {
         String result = helloProxy.sayHello("zdj");
         
         System.out.println("proxy returned result is : " + result);
+        //toString, hasCode, equals, same behavior with sayHello
+        System.out.println(hello.toString());
+        //it's will not go proxy
+        System.out.println(helloProxy.getClass());
     }
 }
